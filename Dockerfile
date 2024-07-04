@@ -6,3 +6,4 @@ RUN apt -qq update && apt -qq install -y git python3 python3-pip ffmpeg
 COPY . .
 RUN pip3 install --no-cache-dir -r requirements.txt
 CMD ["bash","bash.sh"]
+CMD flask run -h 0.0.0.0 -p 8000 & python3 -m ggn
